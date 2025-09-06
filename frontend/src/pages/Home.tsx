@@ -12,8 +12,8 @@ export default function HomePage(){
 		navigate(`/${link}`)
 	}
 	
-	const {width} = useContext(WindowSizeContext)
-	const mobileLimit = 700
+	const {width } = useContext(WindowSizeContext)
+	const mobileLimit = 700 // TODO fix
 
 	const {scrollYProgress} = useScroll()
 
@@ -21,14 +21,14 @@ export default function HomePage(){
 		<div>
 			{/* hero + img */}
 			<div className={`flex flex-col items-center relative h-[90vh] w-full`}>
-				<div className={`z-10 flex flex-col ${width < mobileLimit ? "mt-[15vh]" : "mt-[30vh]" } items-center`}>
+				<div className={`z-10 flex flex-col ${width < mobileLimit ? "mt-[50vh]" : "mt-[30vh]" } items-center`}>
 					<motion.h1 
 						className={`font-bold ${width < mobileLimit ? "text-xl w-[280px]": "text-4xl w-[330px]"} mx-auto  text-center`}
 						initial={{ opacity: 0, y: -100 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ 
 							opacity: { duration: 0.6 },
-							y: { type: "spring", stiffness: 50, damping: 5 }
+							y: { type: "spring", stiffness: 50, damping: 7 }
 						}}
 					>
 						Ever bickered with another person over what to eat?
@@ -37,7 +37,7 @@ export default function HomePage(){
 						className={`${width < mobileLimit ? "text-lg " : "text-xl"} text-center w-[280px] py-3`}
 						initial={{opacity: 0, y: -80}}
 						animate={{opacity: 1, y: 0}}
-						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 50, damping: 5}}}
+						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 50, damping: 7}}}
 					>
 						Pick <i>now</i> with ease!
 					</motion.h2>
@@ -46,7 +46,7 @@ export default function HomePage(){
 						onClick={() => navHelper('pickAFood')}
 						initial={{opacity: 0, y: -80}}
 						animate={{opacity: 1, y: 0}}
-						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 45, damping: 7}}}
+						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 45, damping: 9}}}
 					>
 						Pick a food
 					</motion.button>
@@ -55,7 +55,7 @@ export default function HomePage(){
 						onClick={() => navHelper('tryNew')}
 						initial={{opacity: 0, y: -80}}
 						animate={{opacity: 1, y: 0}}
-						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 45, damping: 7}}}
+						transition={{opacity: {delay: 0.3, duration: 0.5, ease: "easeIn"}, y: {delay: 0.2, type: "spring", stiffness: 45, damping: 9}}}
 					>
 						Try a new random food
 					</motion.button>
@@ -67,7 +67,7 @@ export default function HomePage(){
 					`}
 					initial={{x: -200}}
 					animate={{x: 0}}
-					transition={{type: "spring", stiffness: 100, damping: 5}}
+					transition={{type: "spring", stiffness: 100, damping: 7}}
 				>
 					<img className="lazy" src='/food1.png'/>
 				</motion.div>
@@ -79,7 +79,7 @@ export default function HomePage(){
 					`}
 					initial={{x: 200}}
 					animate={{x: 0}}
-					transition={{type: "spring", stiffness: 100, damping: 5}}
+					transition={{type: "spring", stiffness: 100, damping: 7}}
 				>
 					<img className="lazy" src='/food2.png'/>
 				</motion.div>
