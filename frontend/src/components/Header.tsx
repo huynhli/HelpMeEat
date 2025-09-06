@@ -102,13 +102,12 @@ export default function Header(){
 									</div>
 									<div className="flex items-center text-left pl-4 w-full h-full hover:shadow-lg hover:bg-gray-200 group/inner"
 										onMouseEnter={() => setOtherList([
-											"Choose a random culture",
-											"Choose a random dish",
-											"Choose a random restaurant (soon)"
+											"Random thing 1",
+											"Random thing 2"
 										])}
 										onMouseLeave={() => setOtherList([])}
 									>
-										Pick a food
+										Un autre option
 										<div className="hidden group-hover/inner:flex absolute bg-white pl-4 -left-[160px] top-0 flex-col items-center justify-around w-[160px] h-full"
 										>
 											{otherList.map((item, key) => (
